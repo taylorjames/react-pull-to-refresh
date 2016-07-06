@@ -121,7 +121,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panUp = function(e) {
-	  console.log('pan up', e, pan)
+	  console.log('pan up', e, pan);
 		if ( ! pan.enabled || pan.distance === 0 ) {
 			return;
 		}
