@@ -101,7 +101,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panDown = function(e) {
-
+		console.log('pan down', e, pan);
 		if ( ! pan.enabled ) {
 			return;
 		}
@@ -119,6 +119,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panUp = function(e) {
+		console.log('pan up', e, pan);
 		if ( ! pan.enabled || pan.distance === 0 ) {
 			return;
 		}
@@ -161,6 +162,8 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panEnd = function(e) {
+
+		console.log('pan end', e, pan);
 
 		if ( ! pan.enabled ) {
 			return;
