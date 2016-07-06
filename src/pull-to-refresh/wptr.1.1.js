@@ -63,8 +63,6 @@ export default function WebPullToRefresh() {
 			resistance: params.resistance || defaults.resistance,
 			hammerOptions: params.hammerOptions || {}
 		};
-		
-		console.log('init PTR, options: ', options);
 
 		if ( ! options.contentEl || ! options.ptrEl ) {
 			return false;
@@ -89,7 +87,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panStart = function(e) {
-	  console.log('pan start', e);
+
 		pan.startingPositionY = options.bodyEl.scrollTop;
 
 		if ( pan.startingPositionY === 0 ) {
@@ -103,7 +101,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panDown = function(e) {
-	  console.log('pan down', e, pan);
+
 		if ( ! pan.enabled ) {
 			return;
 		}
@@ -121,7 +119,6 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panUp = function(e) {
-	  console.log('pan up', e, pan);
 		if ( ! pan.enabled || pan.distance === 0 ) {
 			return;
 		}
@@ -164,7 +161,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panEnd = function(e) {
-	  console.log('pan end', e, pan);
+
 		if ( ! pan.enabled ) {
 			return;
 		}
@@ -182,8 +179,7 @@ export default function WebPullToRefresh() {
 
 		pan.distance = 0;
 		pan.enabled = false;
-		
-		return true;
+
 	};
 
 	/**
