@@ -175,6 +175,8 @@ export default function WebPullToRefresh() {
 
 		pan.distance = 0;
 		pan.enabled = false;
+		
+		return true;
 	};
 
 	/**
