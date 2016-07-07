@@ -88,7 +88,7 @@ export default function WebPullToRefresh() {
 	 */
 	var _panStart = function(e) {
 
-		pan.startingPositionY = options.bodyEl.scrollTop;
+		pan.startingPositionY = document.body.scrollTop;
 
 		console.log('pan start', pan.startingPositionY);
 
