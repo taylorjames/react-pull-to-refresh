@@ -74,12 +74,14 @@ export default function WebPullToRefresh() {
 
 		h.get( 'pan' ).set( { direction: Hammer.DIRECTION_VERTICAL } );
 
+
 		h.on( 'panstart', _panStart );
 		h.on( 'pandown', _panDown );
 		h.on( 'panup', _panUp );
 		h.on( 'panend', _panEnd );
 		
 	};
+
 
 	/**
 	 * Determine whether pan events should apply based on scroll position on panstart
@@ -89,8 +91,6 @@ export default function WebPullToRefresh() {
 	var _panStart = function(e) {
 
 		pan.startingPositionY = document.body.scrollTop;
-
-		console.log('pan start', pan.startingPositionY);
 
 		if ( pan.startingPositionY === 0 ) {
 			pan.enabled = true;
@@ -103,7 +103,6 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panDown = function(e) {
-		console.log('pan down', e, pan);
 		if ( ! pan.enabled ) {
 			return;
 		}
@@ -121,7 +120,6 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panUp = function(e) {
-		console.log('pan up', e, pan);
 		if ( ! pan.enabled || pan.distance === 0 ) {
 			return;
 		}
@@ -164,8 +162,6 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panEnd = function(e) {
-
-		console.log('pan end', e, pan);
 
 		if ( ! pan.enabled ) {
 			return;
