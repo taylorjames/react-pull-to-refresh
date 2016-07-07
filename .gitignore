@@ -1,6 +1,6 @@
 examples/**/*-bundle.js
 node_modules/
-lib/
+idea/
 dist/
 .DS_Store
 npm-debug.log
