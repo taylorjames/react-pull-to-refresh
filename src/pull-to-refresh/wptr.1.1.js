@@ -90,6 +90,8 @@ export default function WebPullToRefresh() {
 
 		pan.startingPositionY = options.bodyEl.scrollTop;
 
+		console.log('pan start', pan.startingPositionY);
+
 		if ( pan.startingPositionY === 0 ) {
 			pan.enabled = true;
 		}
